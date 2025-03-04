@@ -1,11 +1,12 @@
 package com.example.minechapapp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
+@SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
 
     @Override
@@ -13,20 +14,14 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        Log.d("SplashActivity", "Iniciando Splash Screen...");
-
+        // Temporizador para redirigir a LoginActivity después de 2 segundos
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                try {
-                    Log.d("SplashActivity", "Intentando abrir Registers...");
-                    Intent intent = new Intent(SplashActivity.this, Registers.class);
-                    startActivity(intent);
-                    finish();
-                } catch (Exception e) {
-                    Log.e("SplashActivity", "Error al abrir Registers: " + e.getMessage());
-                }
+                Intent intent = new Intent(SplashActivity.this, Login.class);
+                startActivity(intent);
+                finish(); // Cierra la SplashActivity para que no se pueda volver atrás
             }
-        }, 3000);
+        }, 2000); // 2000 milisegundos = 2 segundos
     }
 }
