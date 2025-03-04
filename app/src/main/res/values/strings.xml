@@ -5,4 +5,7 @@
     <string name="contrase_a" translatable="false">Contraseña</string>
     <string name="correo_electr_nico" translatable="false">Correo electrónico</string>
     <string name="registrarse" translatable="false">Registrarse</string>
+    <string name="registrarme">registrarme</string>
+    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="Registrarme">Registrarme</string>
 </resources>
